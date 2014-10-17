@@ -8,8 +8,7 @@ class Bob
 
 
 class Message
-  constructor: (utterance) ->
-    @utterance = utterance
+  constructor: (@utterance) ->
 
   isSilent: ->
     return @utterance.trim().length == 0
@@ -18,6 +17,6 @@ class Message
     return @utterance.toUpperCase() == @utterance
 
   isQuestion: ->
-    return @utterance[@utterance.length - 1] == '?'
+    return @utterance.slice(-1) == '?'
 
 module.exports = Bob
